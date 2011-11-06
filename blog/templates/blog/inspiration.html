@@ -1,0 +1,36 @@
+<link href="../static/style.css" rel="stylesheet" type="text/css" media="screen" />
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">DJ Chung  </a></h1>
+        <p> my journey through Silicon Valley</a></p>
+			</div>
+		  	<div id="menu">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/archive">All Posts</a></li>
+					<li class="current_page_item"><a href="#">Inspiration</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</div>  
+		</div>
+  </div>
+  {% for quote in quote_list %}
+    <div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="post">
+						<h3 class="title">{{quote.topic}}</a></h3>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							 {{ quote.content|safe}}
+						</div>
+					</div>
+				</div>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
