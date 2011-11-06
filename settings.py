@@ -128,6 +128,7 @@ LOGGING = {
     }
 }
 
+FORCE_SCRIPT_NAME=''
 
 try:
 	from local_settings import *
