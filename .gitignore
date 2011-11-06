@@ -1,3 +1,4 @@
+djblog.sqlite
 django.pid
 local_settings.py
 *.pyc
