@@ -1,7 +1,6 @@
 from django.conf.urls.defaults import *
-from django.views.generic import DetailView, ListView, date_based
+from django.views.generic import DetailView, ListView, date_based, TemplateView
 from blog.models import Post, Inspiration, About
-from blog.views import AboutView
 
 info_dict = {
   'queryset': Post.objects.all(),
@@ -11,7 +10,7 @@ info_dict = {
 urlpatterns = patterns('',
   (r'^$',
     ListView.as_view(
-      queryset=Post.objects.order_by('-published')[:5],
+      queryset=Post.objects.order_by('-published')[:3],
       context_object_name='post_list',
       template_name='blog/index.html')),
   (r'^about/',
@@ -29,4 +28,6 @@ urlpatterns = patterns('',
     queryset=Inspiration.objects.all(),
     context_object_name='quote_list',
     template_name='blog/inspiration.html')),
+  (r'^contact/', 'blog.views.contact'),
+  (r'^thanks/', TemplateView.as_view(template_name='blog/thanks.html')),
   )

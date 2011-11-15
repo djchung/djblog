@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django import forms
 
 class Category(models.Model):
   name = models.CharField(max_length=60)
@@ -27,3 +28,7 @@ class About(models.Model):
   def __unicode__(self):
     return self.title
 
+class ContactForm(forms.Form):
+  name = forms.CharField(max_length=100)
+  email = forms.EmailField()
+  message = forms.CharField()
